@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simon — Memory Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1 id="level-title">Simon — Press Start</h1>
+
+    <div class="controls">
+      <button id="start-btn" class="btn-control">Start</button>
+      <button id="restart-btn" class="btn-control">Restart</button>
+      <label class="inline">
+        <input id="sound-toggle" type="checkbox" checked> Sound
+      </label>
+      <label class="inline">
+        Speed
+        <select id="speed-select">
+          <option value="1">Slow</option>
+          <option value="2" selected>Normal</option>
+          <option value="3">Fast</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="game-area">
+      <div class="grid" id="grid">
+        <button id="green"   class="color-btn green"  aria-label="green"></button>
+        <button id="red"     class="color-btn red"    aria-label="red"></button>
+        <button id="yellow"  class="color-btn yellow" aria-label="yellow"></button>
+        <button id="blue"    class="color-btn blue"   aria-label="blue"></button>
+      </div>
+
+      <div class="status">
+        <div>Level: <span id="level">0</span></div>
+        <div>Score: <span id="score">0</span></div>
+        <div>High Score: <span id="highscore">0</span></div>
+      </div>
+    </section>
+
+    <aside class="instructions">
+      <h2>How to play</h2>
+      <ol>
+        <li>Press <strong>Start</strong> (or press any key) to begin.</li>
+        <li>Watch the sequence of lights and sounds.</li>
+        <li>Repeat by clicking/tapping the colored tiles in the same order.</li>
+        <li>Each correct round increases the level; a mistake ends the game.</li>
+      </ol>
+      <p class="hint">Use Speed to make the sequence faster. Toggle Sound to mute.</p>
+    </aside>
+  </main>
+
+  <footer class="footer">Simple Simon game — works offline, no external files.</footer>
+
+  <script src="game.js" defer></script>
+</body>
+</html>
